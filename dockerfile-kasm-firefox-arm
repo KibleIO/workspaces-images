@@ -40,9 +40,9 @@ RUN $STARTUPDIR/set_user_permission.sh $HOME
 
 ENV HOME /home/kasm-user
 WORKDIR $HOME
-RUN mkdir -p $HOME && chown -R 1000:0 $HOME
+RUN mkdir -p $HOME && chown -R 1000:0 $HOME && mkdir ./rana_core_utils
 
-COPY librana.so /usr/local/lib
+COPY librana.so ./rana_core_utils
 COPY Themis $HOME
 COPY launcher $HOME
 
