@@ -13,10 +13,10 @@ kible-firefox-x86-publish: $(EXEC_THEMIS) $(EXEC_LIB_RANA) $(LAUNCHER_THEMIS)
 	docker push kible/firefox:x86
 
 $(EXEC_LIB_RANA):
-	cp ../Rana_Core_Utils/Rana_Core_Utils/librana.so ./
+	cp ../c-monorepo/src/kible.io/rana_core_utils/librana.so ./
 
 $(EXEC_THEMIS):
-	cp ../Themis/Themis/Themis ./
+	cp ../c-monorepo/src/kible.io/themis/Themis ./
 
 $(LAUNCHER_THEMIS):
-	cp ../Themis/Themis/launcher ./
+	cp ../c-monorepo/src/kible.io/themis/launcher ./
