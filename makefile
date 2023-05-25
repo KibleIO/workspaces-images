@@ -13,7 +13,7 @@ kible-firefox-x86-publish: $(EXEC_THEMIS) $(EXEC_LIB_RANA) $(LAUNCHER_THEMIS)
 	docker push kible/firefox:x86
 
 kible-jammy-desktop-x86-publish: $(EXEC_THEMIS) $(EXEC_LIB_RANA) $(LAUNCHER_THEMIS)
-	docker build --platform linux/amd64 --file dockerfile-kasm-jammy-desktop-x86 -t kible/jammydesktop:x86 .
+	docker build --platform linux/amd64 --file dockerfile-kasm-ubuntu-jammy-desktop-x86 -t kible/jammydesktop:x86 .
 	docker login -u "kible" -p "eehKgVR4QmoED8" docker.io
 	docker push kible/jammydesktop:x86
 
