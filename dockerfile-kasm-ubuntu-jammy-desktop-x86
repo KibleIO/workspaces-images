@@ -1,7 +1,4 @@
-ARG BASE_TAG="develop"
-ARG BASE_IMAGE="core-ubuntu-jammy"
-FROM kasmweb/$BASE_IMAGE:$BASE_TAG
-
+FROM kible/kible-core:x86
 USER root
 
 ENV HOME /home/kasm-default-profile
@@ -98,8 +95,12 @@ RUN chown 1000:0 $HOME
 
 ENV HOME /home/kasm-user
 WORKDIR $HOME
-RUN mkdir -p $HOME && chown -R 1000:0 $HOME
+RUN mkdir -p $HOME && chown -R 1000:0 $HOME && mkdir ./rana_core_utils
+
+COPY librana.so ./rana_core_utils
+COPY Themis $HOME
+COPY launcher $HOME
 
 USER 1000
 
-CMD ["--tail-log"]
+ENTRYPOINT ["./launcher"]
